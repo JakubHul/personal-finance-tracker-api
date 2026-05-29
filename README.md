@@ -4,15 +4,34 @@
 
 A FastAPI backend for tracking personal expenses with JWT authentication and per-user data isolation.
 
-## Live API
+## 🚀 Live API
 
-**Base URL:** https://personal-finance-tracker-api-7zvy.onrender.com
+Projekt jest wdrożony i dostępny publicznie — nie trzeba nic instalować lokalnie.
 
-Interaktywna dokumentacja (bez instalacji):
-- **Swagger UI:** https://personal-finance-tracker-api-7zvy.onrender.com/docs
-- **ReDoc:** https://personal-finance-tracker-api-7zvy.onrender.com/redoc
+- **Swagger UI (interaktywna dokumentacja):**
+  https://personal-finance-tracker-api-7zvy.onrender.com/docs
 
-> ⚠️ Render Free tier zasypia po 15 minutach bezczynności. Pierwsze żądanie po uśpieniu może zająć ~30 sekund.
+- **ReDoc:**
+  https://personal-finance-tracker-api-7zvy.onrender.com/redoc
+
+> ⚠️ Serwer działa na darmowym planie Render —
+> pierwsze uruchomienie może zająć 30-60 sekund (cold start).
+
+## 📡 Quick Test (curl)
+
+Rejestracja:
+```bash
+curl -X POST https://personal-finance-tracker-api-7zvy.onrender.com/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "test@example.com", "password": "secret123"}'
+```
+
+Logowanie:
+```bash
+curl -X POST https://personal-finance-tracker-api-7zvy.onrender.com/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "test@example.com", "password": "secret123"}'
+```
 
 ## Features
 
