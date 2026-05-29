@@ -1,0 +1,26 @@
+# środowisko
+.env
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# bazy danych
+*.db
+*.db-shm
+*.db-wal
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# build
+dist/
+build/
+*.egg-info/
