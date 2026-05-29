@@ -23,3 +23,4 @@ jobs:
         env:
           SECRET_KEY: test-secret-key-for-ci
           DATABASE_URL: sqlite://
+          PYTHONPATH: .
