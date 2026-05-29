@@ -9,7 +9,7 @@ from app.routes.transactions import router as transaction_router
 from app.schemas import StatsOut
 from app.services.stats import calculate_stats
 
-app = FastAPI()
+app = FastAPI(root_path_in_servers=False)
 
 
 @app.get("/")
