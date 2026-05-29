@@ -4,6 +4,16 @@
 
 A FastAPI backend for tracking personal expenses with JWT authentication and per-user data isolation.
 
+## Live API
+
+**Base URL:** https://personal-finance-tracker-api-7zvy.onrender.com
+
+Interaktywna dokumentacja (bez instalacji):
+- **Swagger UI:** https://personal-finance-tracker-api-7zvy.onrender.com/docs
+- **ReDoc:** https://personal-finance-tracker-api-7zvy.onrender.com/redoc
+
+> ⚠️ Render Free tier zasypia po 15 minutach bezczynności. Pierwsze żądanie po uśpieniu może zająć ~30 sekund.
+
 ## Features
 
 - User registration and login with JWT bearer tokens
@@ -81,7 +91,39 @@ Query params for `GET /transactions`: `category`, `min_amount`, `max_amount`, `m
 |---|---|---|---|
 | `GET` | `/stats` | ✅ | Total expenses, count, max (optional `?month=YYYY-MM`) |
 
-## Example Requests
+## Example Requests (Live API)
+
+Możesz testować bezpośrednio — nie trzeba nic instalować lokalnie.
+
+### Rejestracja
+```bash
+curl -X POST https://personal-finance-tracker-api-7zvy.onrender.com/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "password": "mypassword"}'
+```
+
+### Login (zwraca token)
+```bash
+curl -X POST https://personal-finance-tracker-api-7zvy.onrender.com/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com", "password": "mypassword"}'
+```
+
+### Dodaj transakcję
+```bash
+curl -X POST https://personal-finance-tracker-api-7zvy.onrender.com/transactions \
+  -H "Authorization: Bearer <TOKEN>" \
+  -H "Content-Type: application/json" \
+  -d '{"amount": 150, "category": "food"}'
+```
+
+### Statystyki
+```bash
+curl "https://personal-finance-tracker-api-7zvy.onrender.com/stats?month=2026-05" \
+  -H "Authorization: Bearer <TOKEN>"
+```
+
+## Example Requests (Local)
 
 ### Register
 ```bash

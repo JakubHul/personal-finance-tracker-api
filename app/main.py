@@ -13,6 +13,7 @@ app = FastAPI()
 
 
 @app.get("/")
+@app.head("/")
 def root():
     return {"message": "API is working"}
 
